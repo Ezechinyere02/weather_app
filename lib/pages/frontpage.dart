@@ -203,7 +203,16 @@ class _FrontPageState extends State<FrontPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[900],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/secondpage');
+          },
+          child: Icon(Icons.arrow_back, color: Colors.white),
+        ),
+      ),
+      backgroundColor: Colors.deepPurpleAccent,
 
       body: SafeArea(
         child: RefreshIndicator(
@@ -224,7 +233,7 @@ class _FrontPageState extends State<FrontPage> {
                     gradient: const LinearGradient(
                       begin: Alignment.bottomRight,
                       end: Alignment.topCenter,
-                      colors: [Colors.white, Color.fromARGB(255, 21, 100, 218)],
+                      colors: [Colors.white, Colors.deepPurpleAccent],
                     ),
                   ),
                   child:
@@ -326,10 +335,7 @@ class _FrontPageState extends State<FrontPage> {
                       gradient: const LinearGradient(
                         begin: Alignment.bottomRight,
                         end: Alignment.topCenter,
-                        colors: [
-                          Colors.white,
-                          Color.fromARGB(255, 21, 100, 218),
-                        ],
+                        colors: [Colors.white, Colors.deepPurpleAccent],
                       ),
                     ),
                     child: Column(
